@@ -1,0 +1,28 @@
+{
+  "name": "discord-lyc",
+  "version": "1.0.0",
+  "description": "Original discord bot to moderate the Lycée server ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kharohfamily-science/Discord-Lyc.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "lycée"
+  ],
+  "author": "Kharoh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kharohfamily-science/Discord-Lyc/issues"
+  },
+  "homepage": "https://github.com/kharohfamily-science/Discord-Lyc#readme",
+  "dependencies": {
+    "discord.js": "^12.0.2",
+    "dotenv": "^8.2.0"
+  }
+}
