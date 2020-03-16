@@ -6,9 +6,8 @@ require('dotenv').config()
 const assets = require('./assets/assets')
 
 /* subglobal imports */
-const config = assets.config
 const client = new Discord.Client()
-const db = new Base('')
+const data = new Base({ name: 'data' })
 
 /* event handler */
 fs.readdir('./src/events', (err, files) => {
@@ -17,23 +16,11 @@ fs.readdir('./src/events', (err, files) => {
         if (!fileName.endsWith('.js')) return
         const event = require(`./src/events/${fileName}`)
         const eventName = fileName.split('.')[0]
-        client.on(eventName, event.bind(null, client))
+        client.on(eventName, event.bind(null, { Discord, assets, client, data }))
+        console.log('Loaded event ' + eventName)
         delete require.cache[require.resolve(`./src/events/${fileName}`)]
     })
 })
 
-
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!')
-  }
-})
-
-
-/* log the client in */
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`)
-})
-
+/* log in the client */
 client.login(process.env.CLIENT_TOKEN)
