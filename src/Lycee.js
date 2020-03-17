@@ -57,6 +57,9 @@ class Lycee extends Client {
         member.edit({
             nick: newUserName
         })
+
+        /* set the registered attribute to the user */
+        this.data.set(userID, 4, 'regState')
     }
 }
 
