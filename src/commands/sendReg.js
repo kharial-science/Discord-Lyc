@@ -17,6 +17,9 @@ module.exports = async (client, message, args) => {
     client.data.set(id, {})
     client.data.set(id, 0, 'regState')
 
+    /* send feedback */
+    message.channel.send('sent new registration form to user ' + id)
+
     /* send the welcome message to the client and ask for his classe */
     const memberDMChannel = await client.guilds.cache.get(client.config.server).members.cache.get(id).createDM()
     memberDMChannel.send('Nous venons (les modérateurs) de relancer ton inscription car il doit y avoir eu une erreur ! Réponds normalement aux questions qui suivent, merci :)')
