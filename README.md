@@ -1,2 +1,2 @@
-#Discord-Lyc
-##A discord bot
+# Discord-Lyc
+## A discord bot
